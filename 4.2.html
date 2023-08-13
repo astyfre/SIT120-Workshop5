@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <Title>To-Do</Title>
+        <link rel="stylesheet" type="text/css" href="styles.css"> <!-- call to external styles-->
+        
+    </head>
+
+    <body>
+        <div class ='container'>
+            <h1>To-Do List</h1>
+            <input type="text" id="taskInput" placeholder="Enter your task...">
+            <button class="add-btn" onclick="addTask()">Add</button>
+            <ul id="taskList">
+            </ul>
+        </div>
+        
+        
+
+        <script>
+            
+            const taskInput =document.getElementById('taskInput')
+            const taskList =document.getElementById('taskList')
+
+            function addTask(){
+                const taskText = taskInput.value.trim();
+
+                if (taskText !== ""){
+                    const li = document.createElement('li');
+                    const taskTextSpan = document.createElement('span')
+                    taskTextSpan.textContent = taskText;
+                    li.appendChild(taskTextSpan);
+
+                    const deleteBtn = document.createElement("span");
+                    deleteBtn.textContent ="❌";
+                    deleteBtn.className ="delete-btn";
+                    deleteBtn.addEventListener("click", deleteTask);
+                    li.appendChild(deleteBtn);
+
+                    li.addEventListener("click", toggleComplete);
+                    taskList.appendChild(li);
+                    taskInput.value="";
+                }
+            }
+
+            function deleteTask(event){
+                const listItem = event.target.parentElement;
+                taskList.removeChild(listItem);
+            }
+
+            function toggleComplete(event){
+                const listItem = event.target;
+                listItem.classList.toggle('completed');
+            }
+            taskInput.addEventListener("keyup", function (event) {
+                if (event.key === "Enter"){
+                    addTask();
+                }
+            });
+
+        </script>
+        
+       
+        
+    </body>
+</html>

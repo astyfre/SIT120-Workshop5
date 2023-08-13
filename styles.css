@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+  }
+
+  .delete-btn {
+    cursor: pointer;
+
+  }
+
+  .add-btn {
+    cursor: pointer;
+    
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: green;
+  }
+
+  body {
+    align-items: center;
+  }
+
+  li {
+    align-items: center;
+    font-size: 20px;
+    
+  }
