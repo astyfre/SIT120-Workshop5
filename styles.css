@@ -1,0 +1,10 @@
+.game-button{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+}
+.reset-button{
+    cursor: pointer;
+}
