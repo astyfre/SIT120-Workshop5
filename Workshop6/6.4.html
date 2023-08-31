@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>V-mdoel lazy</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>Using v-model.lazy</h1>
+            <label for="username">Username: </label>
+            <input type="text" id="username" v-model.lazy="username"><br>
+            <p>Your entered Username: {{ username }}</p>
+            
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    username: ''
+                    
+                
+                },
+                
+            })
+        </script>
+    </body>
+</html>

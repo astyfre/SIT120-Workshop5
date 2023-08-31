@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic options Rendering using v-for</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>Dynamic options Rendering using v-for</h1>
+            <label for="country">Select a country: </label>
+            <select id="country" v-model="selectCountry">
+                <option v-for="country in countries" :key="country.id" :value="country.name">{{ country.name }}</option>
+            </select>
+            <p>You selected: {{ selectedCountry }}</p>
+            
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    selectedCountry: '',
+                    countries: [
+                        {id: 1, name: 'United States'},
+                        {id: 2, name: 'Canada'},
+                        {id: 3, name: 'United Kingdom'},
+                        {id: 4, name: 'Australia'},
+                        {id: 5, name: 'Germany'},
+                    ]
+                
+                },
+                
+            })
+        </script>
+    </body>
+</html>
